@@ -14,3 +14,18 @@ tableData.forEach((datum) => {
     });
   });
   
+  // Use a date form in your HTML document and write JavaScript code that will listen for events 
+  // and search through the date/time column to find rows that match user input.
+  
+  var input = d3.select("#datetime");
+
+  input.on("input", function() {
+    var inputValue = d3.event.target.value;
+    console.log(inputValue);
+  
+
+  // var inputValue = input.property("value");
+
+  var filteredData = tableData.filter(tableData => tableData.datetime=== inputValue)
+  console.log(filteredData)
+});
