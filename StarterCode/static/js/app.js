@@ -4,6 +4,21 @@ var tableData = data;
 
 // YOUR CODE HERE!
 
+// Add the following datum as the third entry of the data.js file:
+
+newDatum={
+  datetime: "1/28/1996",
+  city: "dallas",
+  state: "tx",
+  country: "us",
+  shape: "star",
+  durationMinutes: "5 mins.",
+  comments: "Cowboys win a superbowl, that's alien!."
+  };
+
+tableData.splice(2,0,newDatum);
+console.log(tableData);
+
 // Loop through array of objects then each object
 var tbody = d3.select("tbody");
 
