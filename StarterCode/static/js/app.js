@@ -7,7 +7,7 @@ var tableData = data;
 // Loop through array of objects then each object
 var tbody = d3.select("tbody");
 
-function displayData(data){ 
+function showData(data){ 
   tbody.text("")
   data.forEach((datum) => {
       var row = tbody.append("tr");
@@ -16,7 +16,7 @@ function displayData(data){
       });
     })};
 
-displayData(tableData)
+showData(tableData)
 
   // Use a date form in your HTML document and write JavaScript code that will listen for events 
   // and search through the date/time column to find rows that match user input.
@@ -26,12 +26,14 @@ displayData(tableData)
   
     
   // filter data with desired date
-    function filter(){
+    function filterData(){
         d3.event.preventDefault();
         var inputValue= input.property("value")
         console.log(inputValue);
         var filteredData = tableData.filter(datum => datum.datetime===inputValue)
-        displayData(filteredData)
+        showData(filteredData)
     }
 
-    btn.on("click", filter)
+    btn.on("click", filterData)
+    input.on("change", filterData)
+
